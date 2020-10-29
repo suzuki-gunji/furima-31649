@@ -1,24 +1,55 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| email      | string     | null: false, unique:true       |
+| password   | string     | null: false                    |
+| nickname   | string     | null: false                    |
+| last_name  | text       | null: false                    |
+| first_name | text       | null: false                    |
+| birthday   | text       | null: false                    |
 
-Things you may want to cover:
+### Association
+- has_many :items
+- has_many :purchases
 
-* Ruby version
+## itemsテーブル
 
-* System dependencies
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| item_name  | text       | null: false                    |
+| category   | text       | null: false                    |
+| price      | string     | null: false                    |
+| user       | references | null: false  foreign_key: true |
 
-* Configuration
+### Association
+- has_one :purchases
+- has_many :addresses
+- belongs_to :users
 
-* Database creation
+## purchasesテーブル
 
-* Database initialization
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| day        | string     | null: false                    |
+| user       | references | null: false  foreign_key: true |
+| item       | references | null: false  foreign_key: true |
 
-* How to run the test suite
+### Association
+- belongs_to :users
+- belongs_to :items
 
-* Services (job queues, cache servers, search engines, etc.)
+## addressesテーブル
 
-* Deployment instructions
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| postal_code  | string     | null: false                    |
+| prefecture   | string     | null: false                    |
+| municipality | string     | null: false                    |
+| address      | text       | null: false                    |
+| building     | text       | null: false                    |
+| phone number | integer    | null: false                    |
 
-* ...
+
+### Association
+- belongs_to :items
