@@ -7,7 +7,7 @@
 | nickname   | string     | null: false                    |
 | last_name  | text       | null: false                    |
 | first_name | text       | null: false                    |
-| birthday   | text       | null: false                    |
+| birthday   | string     | null: false                    |
 
 ### Association
 - has_many :items
