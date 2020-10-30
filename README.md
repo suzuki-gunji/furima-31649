@@ -1,15 +1,15 @@
 ## usersテーブル
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| email        | string     | null: false, unique:true       |
-| password     | string     | null: false                    |
-| nickname     | string     | null: false                    |
-| last_name    | string     | null: false                    |
-| first_name   | string     | null: false                    |
-| last_reading | string     | null: false                    |
-| first_name   | string     | null: false                    |
-| birthday     | string     | null: false                    |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| email         | string     | null: false, unique:true       |
+| password      | string     | null: false                    |
+| nickname      | string     | null: false                    |
+| last_name     | string     | null: false                    |
+| first_name    | string     | null: false                    |
+| last_reading  | string     | null: false                    |
+| first_reading | string     | null: false                    |
+| birthday      | string     | null: false                    |
 
 ### Association
 - has_many :items
