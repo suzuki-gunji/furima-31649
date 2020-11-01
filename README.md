@@ -1,15 +1,15 @@
 ## usersテーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| email         | string     | null: false, unique:true       |
-| password      | string     | null: false                    |
-| nickname      | string     | null: false                    |
-| last_name     | string     | null: false                    |
-| first_name    | string     | null: false                    |
-| last_reading  | string     | null: false                    |
-| first_reading | string     | null: false                    |
-| birthday      | string     | null: false                    |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| email              | string     | null: false, unique:true       |
+| encrypted_password | string     | null: false                    |
+| nickname           | string     | null: false                    |
+| last_name          | string     | null: false                    |
+| first_name         | string     | null: false                    |
+| last_reading       | string     | null: false                    |
+| first_reading      | string     | null: false                    |
+| birthday           | date       | null: false                    |
 
 ### Association
 - has_many :items
@@ -17,17 +17,17 @@
 
 ## itemsテーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| item_name     | string     | null: false                    |
-| item_explain  | string     | null: false                    |
-| category      | string     | null: false                    |
-| item_status   | string     | null: false                    |
-| delivery_fee  | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
-| days          | string     | null: false                    |
-| price         | string     | null: false                    |
-| user          | references | null: false  foreign_key: true |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| name             | string     | null: false                    |
+| explain          | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
+| delivery_fee_id  | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
+| days_id          | integer    | null: false                    |
+| price            | integer    | null: false                    |
+| user             | references | null: false  foreign_key: true |
 
 ### Association
 - has_one :purchase
@@ -53,7 +53,7 @@
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | house_number  | string     | null: false                    |
-| building      | string     | null: false                    |
+| building      | string     |                                |
 | phone number  | string     | null: false                    |
 | purchase      | references | null: false  foreign_key: true |
 
