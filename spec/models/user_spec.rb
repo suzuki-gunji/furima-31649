@@ -90,12 +90,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("First reading can't be blank")
       end
-      it "名字のフリガナが全角でない場合は登録できない" do
+      it "名字のフリガナが全角のカタカナでない場合は登録できない" do
         @user.last_reading = "s"
         @user.valid?
         expect(@user.errors.full_messages).to include("Last reading には全角のカタカナを使用してください")
       end
-      it "名前のフリガナが全角でない場合は登録できない" do
+      it "名前のフリガナが全角のカタカナでない場合は登録できない" do
         @user.first_reading = "s"
         @user.valid?
         expect(@user.errors.full_messages).to include("First reading には全角のカタカナを使用してください")
