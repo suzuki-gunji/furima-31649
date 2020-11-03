@@ -6,8 +6,8 @@ FactoryBot.define do
     password_confirmation  {password}
     last_name              {Faker::Base.regexify("[あ]{2}")}
     first_name             {Faker::Base.regexify("[あ]{2}")}
-    last_reading           {Faker::Base.regexify("[あ]{2}")}
-    first_reading          {Faker::Base.regexify("[あ]{2}")}
+    last_reading           {Faker::Base.regexify("[ア]{2}")}
+    first_reading          {Faker::Base.regexify("[ア]{2}")}
     birthday               {Faker::Date.birthday(min_age: 18, max_age: 65)}
   end
 end
