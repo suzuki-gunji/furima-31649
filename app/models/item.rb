@@ -9,7 +9,7 @@ class Item < ApplicationRecord
     validates :status_id        
     validates :delivery_fee_id  
     validates :prefecture_id    
-    validates :days_id          
+    validates :day_id          
     validates :price,            numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}, format: { with: /\A[0-9]+\z/ , message: 'には半角の数字を使用してください' }
     validates :image            
   end
@@ -26,7 +26,7 @@ class Item < ApplicationRecord
     validates :status_id       
     validates :delivery_fee_id 
     validates :prefecture_id  
-    validates :days_id        
+    validates :day_id        
   end
 
 end
