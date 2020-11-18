@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
 
   def create 
     @item_purchase = ItemPurchase.new(purchase_params)
+    @item.update(buyer_id: current_user.id)
     if @item_purchase.valid?
       pay_item
       @item_purchase.save
