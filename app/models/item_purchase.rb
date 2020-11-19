@@ -9,6 +9,8 @@ class ItemPurchase
     validates :house_number
     validates :phone_number,format: {with: /\A\d{10}$|^\d{11}\z/, message: "が間違っています"}
     validates :token
+    validates :user_id
+    validates :item_id
   end
   validates :prefecture_id, numericality: { other_than: 1 }
 
